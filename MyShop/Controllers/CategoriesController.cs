@@ -27,6 +27,21 @@ namespace MyShop.Controllers
             return await _context.Categories.ToListAsync();
         }
 
+        public List<Category> Execute()
+        {
+            return _context.Categories
+                .OrderBy(c => c.Id)
+                .ToList();
+        }
+
+        public bool Delete(int id)
+        {
+            var aaa = Execute();
+            var bb = _context.Categories.Where(c => c.Id == id).FirstOrDefault();
+            return aaa.Remove(bb);
+
+        }
+
         // GET: api/Categories/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)

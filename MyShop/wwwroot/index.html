@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>i category</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+
+    <style>
+        input[name="worksheet"],
+        input[name="worksheet"]:not(:checked) + div {
+            display: none;
+        }
+    </style>
+
+</head>
+<body style="background-color:black">
+
+    <nav id="menu" class="menu_unfixed" style="height:100vh; width:35%;">
+        <ul class="nav-links">
+            <li>
+                <a onclick="displayCategoryPage(); getCategories();">Home</a>
+            </li>
+            <li>
+                <a onclick="">Work</a>
+            </li>
+            <li>
+                <a href="">Project</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="page" onchange="hide_preloader()">
+
+
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/product.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
+    <script src="js/categories.js" asp-append-version="true"></script>
+    <script type="text/javascript" id="page_scripts">
+
+        function AddImg() { image_preview.src = URL.createObjectURL(event.target.files[0]) }
+        function DeleteImg() { document.querySelector('.test').value = ''; image_preview.src = ""; URL.revokeObjectURL(image_preview.src) }
+    </script>
+</body>
+</html>

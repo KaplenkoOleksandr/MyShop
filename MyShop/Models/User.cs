@@ -6,20 +6,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyShop.Models
 {
-    public class Category
+    public class User
     {
-        public Category()
+        public User()
         {
             Products = new List<Product>();
+            SoldProds = new List<SoldProd>();
         }
-
         public int Id { get; set; }
-        [Display(Name = "Category")]
         public string Name { get; set; }
-
-        public bool IsActive { get; set; }
-        public string BackgroundImagePath { get; set; }
+        public string Password { get; set; }
+        public int Money { get; set; }
+        public string Role { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<SoldProd> SoldProds { get; set; }
     }
 }

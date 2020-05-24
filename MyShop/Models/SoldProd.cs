@@ -6,12 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyShop.Models
 {
-    public class Product
+    public class SoldProd
     {
-        public Product()
-        {
-            Reviews = new List<Review>();
-        }
 
         public int Id { get; set; }
         [Display(Name = "Product")]
@@ -20,13 +16,8 @@ namespace MyShop.Models
         [Display(Name = "Price")]
         public int SellPrice { get; set; }
         [DataType(DataType.Currency)]
-        public int BuyPrice { get; set; }
-        public string ShortInfo { get; set; }
-        public int CategoryId { get; set; }
-        public int SellUserId { get; set; }
+        public int BUserId { get; set; }
 
-        public virtual Category Category { get; set; }
         public virtual User User { get; set; }
-        public virtual ICollection<Review> Reviews { get; set; }
     }
 }
